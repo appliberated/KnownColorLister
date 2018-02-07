@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>KnownColorLister | Appliberated</title>        
+    <style type="text/css">
+        html {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #000000;
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        a {
+            color: #3399ff;
+            text-decoration: none;
+        }
+
+        a:hover, a:active {
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: normal;
+            margin: 0 0 1em 0;
+        }
+
+        p {
+            margin: 0 0 1em 0;
+        }
+
+        p:last-child {
+            margin: 0;
+        }
+
+        var {
+            font-family: monospace;
+            font-style: normal;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 2em;
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        td {
+            border-top: 1px solid #eceeef;
+            padding: 0.25em 1em;
+        }
+
+        .container {
+            padding: 1.5em 1em;
+        }
+
+        .intro {
+            background: #0067cc;
+            border-bottom: 2px solid #ffffff;
+            color: #ffffff;
+            position: fixed;
+        }
+
+        .introtext {
+            margin: 0;
+        }
+
+        .introlink:hover, .introlink:active {
+            color: #b9d1ea;
+        }
+
+        .helplink {
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            display: block;
+            float: right;
+            margin-top: -0.25em;
+            padding: 0.25em 1em;
+        }
+
+        .helplink:hover, .helplink:active {
+            background: #b9d1ea;
+        }
+
+        .content {
+            padding-top: 6.5em;
+            padding-bottom: 0.5em;
+        }
+
+        .footer {
+            background: #f0f0f0;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .copyright {
+            float: right;
+        }
+
+        .footerlink:hover, .footerlink:active {
+            color: #0067cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container intro ">
+        <a class="helplink" href="https://www.appliberated.com/knowncolorlister/" target="_blank">Help</a>
+		<p class="introtext">The <strong><a class="introlink" href="https://msdn.microsoft.com/en-us/library/system.drawing.knowncolor.aspx" target="_blank">KnownColor</a></strong> values on your PC. Press <kbd>Ctrl+F</kbd> to find a color, and <kbd>Ctrl+C</kbd> to copy.</p>
+    </div>
+    
+    <div class="container content">
+
+        <h2>System Colors</h2>
+        <table>
+        {SystemColorsList}      
+        </table>
+
+        <h2>Named Colors</h2>
+        <table>
+        {NamedColorsList}
+        </table>
+    </div>
+
+    <div class="container footer">
+        <p class="copyright">&copy; 2016-2018 <a class="footerlink" href="https://www.appliberated.com/" target="_blank">Appliberated</a></p>
+        <p>KnownColorLister {ProductVersion}</p>
+    </div>
+</body>
+</html>
