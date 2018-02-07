@@ -51,15 +51,15 @@
 
 ;Version Information
 
-  VIProductVersion "1.0.0.10"
+  VIProductVersion "1.0.0.11"
   VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductName" "KnownColorLister"
   VIAddVersionKey /LANG=${LANG_ENGLISH} "Comments" "Lists all known Windows system colors"
   VIAddVersionKey /LANG=${LANG_ENGLISH} "CompanyName" "Appliberated"
   VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalTrademarks" ""
   VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalCopyright" "Copyright © 2016-2018 Appliberated (https://www.appliberated.com)"
   VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "KnownColorLister Installer"
-  VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "1.0.0.10"
-  VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductVersion" "1.0.0.10"
+  VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "1.0.0.11"
+  VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductVersion" "1.0.0.11"
 
 ;--------------------------------------
 
@@ -67,6 +67,7 @@ Section
   ; Copy files to installation directory
   SetOutPath $INSTDIR
   File Files\KnownColorLister.exe
+  File Files\KnownColorLister.exe.config
   File Files\LICENSE
   File Files\HomePageLink.html
 
@@ -79,7 +80,7 @@ Section
   WriteRegStr   HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\KnownColorLister" "DisplayName" "KnownColorLister"
   WriteRegStr   HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\KnownColorLister" "UninstallString" "$\"$INSTDIR\uninstall.exe$\""
   WriteRegStr   HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\KnownColorLister" "QuietUninstallString" "$\"$INSTDIR\uninstall.exe$\" /S" 
-  WriteRegStr   HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\KnownColorLister" "DisplayVersion" "1.0.0.10"
+  WriteRegStr   HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\KnownColorLister" "DisplayVersion" "1.0.0.11"
   WriteRegStr   HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\KnownColorLister" "DisplayIcon" "$\"$INSTDIR\KnownColorLister.exe$\""
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\KnownColorLister" "EstimatedSize" "71"
   WriteRegStr   HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\KnownColorLister" "HelpLink" "https://www.appliberated.com/knowncolorlister/"
@@ -102,6 +103,7 @@ Section "Uninstall"
   ; Delete files from installation directory
   Delete "$INSTDIR\uninstall.exe"
   Delete "$INSTDIR\KnownColorLister.exe"
+  Delete "$INSTDIR\KnownColorLister.exe.config"
   Delete "$INSTDIR\LICENSE"
   Delete "$INSTDIR\HomePageLink.html"
   RMDir "$INSTDIR"
